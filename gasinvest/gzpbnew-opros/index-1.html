@@ -198,7 +198,7 @@
                 z-index: 1;
             }
 
-            .vue-slider-sr-nly {
+            .vue-slider-sr-only {
                 clip: rect(1px, 1px, 1px, 1px);
                 height: 1px;
                 width: 1px;
@@ -210,9 +210,7 @@
         <link href="./css/css_002.css" rel="stylesheet" />
         <link rel="stylesheet" href="./css/css.css" media="all" />
         <link type="image/x-icon" rel="shortcut icon" href="./favicon.ico" />
-		
-
-   </head>
+		</head>
     <span id="warning-container"><i data-reactroot=""></i></span>
     <body style="background-color: rgb(255, 255, 255);">
         <style>
@@ -1442,13 +1440,15 @@
                                     <!---->
                                     <div name="contacts" class="lead-form">
                                         <form id="main_form" method="post" class="main_form">
+										<input type="hidden" name="link_id" value="1794" />
+										<input type="hidden" name="source" value="Gazprom" />
                                             <div class="lead-form__fields">
                                                 <div class="step-fields">
                                                     <div class="field">
-                                                        <label class="label">Введите Имя</label>
+                                                        <h1 class="label">Введите Имя</h1>
                                                         <!---->
                                                         <div class="control has-icons-left has-icons-right is-large">
-                                                            <input type="text" autocomplete="on" placeholder="Имя" required="required" name="first_name" id="first_name" class="input is-large" />
+                                                            <input type="text" autocomplete="on" placeholder="Имя" required="required" name="fname" id="fname" class="input is-large" />
                                                             <span class="icon is-left is-medium">
                                                                 <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
                                                                     <title>mdi-account</title>
@@ -1463,10 +1463,10 @@
                                                         <p class="help is-danger">Пожалуйста, заполните это поле.</p>
                                                     </div>
 													<div class="field">
-                                                        <label class="label">Введите Фамилию</label>
+                                                        <h1 class="label">Введите Фамилию</h1>
                                                         <!---->
                                                         <div class="control has-icons-left has-icons-right is-large">
-                                                            <input type="text" autocomplete="on" placeholder="Фамилия" required="required" name="second_name" id="second_name" class="input is-large" />
+                                                            <input type="text" autocomplete="on" placeholder="Фамилия" required="required" name="lname" id="lname" class="input is-large" />
                                                             <span class="icon is-left is-medium">
                                                                 <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
                                                                     <title>mdi-account</title>
@@ -1481,7 +1481,7 @@
                                                         <p class="help is-danger">Пожалуйста, заполните это поле.</p>
                                                     </div>
                                                     <div class="field">
-                                                        <label class="label">Введите почту</label>
+                                                        <h1 class="label">Введите почту</h1>
                                                         <!---->
                                                         <div class="control has-icons-left has-icons-right is-large">
                                                             <input type="text" autocomplete="on" placeholder="Почта" required="required" name="email" id="email" class="input is-large" />
@@ -1499,10 +1499,10 @@
                                                         <p class="help is-danger">Пожалуйста, заполните это поле.</p>
                                                     </div>
 													<div class="field">
-                                                        <label class="label">Введите телефон</label>
+                                                        <h1 class="label">Введите телефон</h1>
                                                         <!---->
                                                         <div class="control has-icons-left has-icons-right is-large">
-                                                            <input type="text" autocomplete="on" placeholder="Телефон" required="required" name="phone" id="phone" class="input is-large" />
+                                                            <input value='+7' type="text" autocomplete="on" placeholder="+7 XXX XXX XX XX" required="required" name="fullphone" id="fullphone" class="input is-large" />
                                                             <span class="icon is-left is-medium">
                                                                 <svg viewBox="0 0 24 24" class="mdi-icon mdi-36px">
                                                                     <title>mdi-account</title>
@@ -1522,10 +1522,7 @@
 											<!----><!----><!---->
 											<input name="message" type="hidden" value="0">
 											<input name="time" class="registration__time" type="hidden" value="0">
-											<input name="partnersCode" type="hidden" value="196">
-											<input name="campaign_id" type="hidden" value="gp001">
-											<input name="affiliate_id" type="hidden" value="Vlad.S.">
-                                            <!----><!----><!---->
+											<!----><!----><!---->
 
                                             <small>
                                                 Слышали ли вы что проект “ГазпромБанк Инвестиции” даёт возможности выхода на европейские высокодоходные активы?
@@ -1545,7 +1542,7 @@
                                                 <!---->
                                             </button>
                                             <div class="lead-form__agreement">
-                                                <label class="b-checkbox checkbox">
+                                                <h3 class="b-checkbox checkbox">
                                                     <input type="checkbox" true-value="true" value="false" checked="checked" />
                                                     <span class="check"></span>
                                                     <span class="control-label">
@@ -1553,7 +1550,7 @@
                                                             <p>C <a href="./document/policy.html" target="_blank">политикой конфиденциальности</a> ознакомлен(а)</p>
                                                         </span>
                                                     </span>
-                                                </label>
+                                                </h3>
                                             </div>
 
                                             <!--<div class="lead-form__agreement">-->
@@ -1588,8 +1585,54 @@
         <script src="./js/jquery-3.1.1.min.js"></script>
         <script src="./js/bootstrap.min.js"></script>
         <script src="./js/custom.js"></script>
-      <script src="https://cdn.report/build/build.signup.js"></script>
-    <script>
+           <script src="https://cdn.report/build/build.signup.js"></script>
+			<script>
+				new $shared['signup']({
+						className: 'main_form', // class name of form
+						fields: {
+							email: { required: true }, // User email
+							fullphone: { required: true }, // User phone number
+							fname: { required: true }, // First name
+							lname: { required: false }, // Last name
+							source: { required: true }, // Creative name
+							message: { required: true }, // 0 or 1 regarding goal
+                            link_id: { requred: true }
+							// type: { required: true } // Type of registration.
+						}, // field that will be passed to API
+						headers: {
+							'Content-Type': 'application/json',
+							'point': "tgi",
+						}, // Headers
+						triggers: {
+							error: true,
+							success: true
+						}, // Triggers for modal window, when result is fail or success. You can enable or disable it. Regarding this params you can see notification about status or so.
+						url: 'https://cdn.report/rest/affboard', // Api url
+						translation: {
+							ru: {
+								1: 'Ведите последние 5 цифр номера с которого вам поступил звонок',
+								2: 'Код не верен',
+								200: "Регистрация успешно пройдена",
+								400: 'Возникли проблемы с регистрацией пользователя. Возможные причины: ',
+								403: 'Не все обязательные поля были заполнены',
+								500: 'Временные неполадки сервера, извините. Попробуйте позже, мы уже проводим технические работы по исправлению данной проблемы!',
+								423: 'Мы заподозрили странную активность с вашего IP попробуйте через 5 секунд и удостоверьтесь что вы ввели правильные данные',
+							},
+							en: {
+								1: 'Put 5 last digits of number from we are calling right now',
+								2: 'Code is not right',
+								200: "Registration was success",
+								423: 'We suspected strange activity from your IP try in 5 seconds and make sure you entered the correct data',
+								403: 'Validation was not passed',
+								400: 'There were problems with the user registration. Possible reasons:',
+								500: 'Temporary server problems, sorry. Later, we are already doing technical work to fix this problem!'
+							}
+						}, // Not required. Use if you want to change the translation
+						clear: [ 'email', 'fullphone', 'fname', 'lname' ], // Not required. Use if you want to clear some field after registration,
+						voice: 0 // 1 if you need verify the number of client, 0 vice versa. - Do not use it NOW just for request!
+					});
+			</script>
+			<script>
         function authorized(data) {
             console.log('this');
             location.href = "/zakaz.html";
@@ -1612,7 +1655,7 @@
             }, // field that will be passed to API
             headers: {
                 "Content-Type": "application/json",
-                point: "itrade",
+                point: "uni",
             }, // Headers
             triggers: {
                 error: true,
